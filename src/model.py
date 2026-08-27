@@ -8,12 +8,13 @@ def predict(X, w, b):
 def compute_cost(X, y, w, b):
     m = X.shape[0]
     y_hat = predict(X, w, b)
-    cost = 0
+
+    cost = 0.0
     for i in range(m):
-        loss = (y_hat[i] - y[i]) ** 2
-        cost += loss
-    cost = cost / (2 * m)
-    return cost
+        error = y_hat[i, 0] - y[i, 0]
+        cost += error ** 2
+
+    return cost / (2 * m)
 
 def gradient_descent(X, y, w, b, alpha, iterations):
     m = X.shape[0]
@@ -33,6 +34,14 @@ def gradient_descent(X, y, w, b, alpha, iterations):
 
     return w, b, J_history
 
+def rmse(X, y, w, b):
+    y_hat = predict(X, w, b)
+    return np.sqrt(np.mean((y_hat - y) ** 2))
 
+def r2_score(X, y, w, b):
+    y_hat = predict(X, w, b)
+    ss_res = np.sum((y - y_hat) ** 2)
+    ss_tot = np.sum((y - np.mean(y)) ** 2)
+    return 1 - (ss_res / ss_tot)
 
 
