@@ -55,26 +55,35 @@ LinearRegression-From-Scratch/
 
 ## Mathematical Model
 
+### Prediction
 
-Prediction
+$$
+\hat{y}=Xw+b
+$$
 
-```math \hat{y}=Xw+b ```
+### Cost Function (Mean Squared Error)
 
-Cost Function (Mean Squared Error)
+$$
+J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}\left(\hat{y}^{(i)}-y^{(i)}\right)^2
+$$
 
-```math J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}\left(\hat{y}^{(i)}-y^{(i)}\right)^2 ```
+### Gradient Update
 
-Gradient Update
+$$
+w:=w-\alpha\frac{1}{m}X^{T}(\hat{y}-y)
+$$
 
-```math w:=w-\alpha\frac{1}{m}X^{T}(\hat{y}-y) ```
+$$
+b:=b-\alpha\frac{1}{m}\sum_{i=1}^{m}(\hat{y}-y)
+$$
 
-```math b:=b-\alpha\frac{1}{m}\sum_{i=1}^{m}(\hat{y}-y) ```
+### Feature Normalization (Z-Score)
 
-Feature Normalization (Z-Score)
+Each feature is standardized before training to improve convergence.
 
-Each feature is standardized before training to improve convergence:
-
-```math x_{norm}=\frac{x-\mu}{\sigma} ```
+$$
+x_{norm}=\frac{x-\mu}{\sigma}
+$$
 
 where:
 
