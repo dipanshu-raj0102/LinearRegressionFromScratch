@@ -18,7 +18,7 @@ The model is trained on the **California Housing** dataset and evaluated using a
 ## Project Structure
 
 ```text
-LinearRegression-From-Scratch/
+LinearRegressionFromScratch/
 │
 ├── data/
 │   └── housing.csv
