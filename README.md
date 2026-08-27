@@ -55,29 +55,32 @@ LinearRegression-From-Scratch/
 
 ## Mathematical Model
 
-Prediction:
 
-<p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\hat{y}=Xw+b" />
-</p>
+Prediction
 
-Cost Function:
+```math \hat{y}=Xw+b ```
 
-<p align="center">
-  <img src="https://latex.codecogs.com/svg.image?J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}(\hat{y}^{(i)}-y^{(i)})^2" />
-</p>
+Cost Function (Mean Squared Error)
 
-Gradient Update:
+```math J(w,b)=\frac{1}{2m}\sum_{i=1}^{m}\left(\hat{y}^{(i)}-y^{(i)}\right)^2 ```
 
-<p align="center">
-  <img src="https://latex.codecogs.com/svg.image?w:=w-\alpha\frac{1}{m}X^T(\hat{y}-y)" />
-</p>
+Gradient Update
 
-<p align="center">
-  <img src="https://latex.codecogs.com/svg.image?b:=b-\alpha\frac{1}{m}\sum(\hat{y}-y)" />
-</p>
+```math w:=w-\alpha\frac{1}{m}X^{T}(\hat{y}-y) ```
 
----
+```math b:=b-\alpha\frac{1}{m}\sum_{i=1}^{m}(\hat{y}-y) ```
+
+Feature Normalization (Z-Score)
+
+Each feature is standardized before training to improve convergence:
+
+```math x_{norm}=\frac{x-\mu}{\sigma} ```
+
+where:
+
+μ = mean of the feature (computed from the training set)
+
+σ = standard deviation of the feature
 
 ## Training Pipeline
 
@@ -107,7 +110,7 @@ The cost decreases smoothly, showing successful convergence.
 
 Predicted prices compared with ground truth.
 
-![Actual vs Predicted](images/actual_vs_predicted.png)
+![Actual vs Predicted](images/predicted_vs_actual.png)
 
 ---
 
