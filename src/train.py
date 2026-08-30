@@ -83,7 +83,7 @@ plt.plot(
 
 plt.title(
     f"Actual vs Predicted House Prices\n"
-    f"R² = {test_r2:.3f} | RMSE = ${test_rmse:,.0f}"
+    f"R² = {test_r2:.3f} | RMSE = ${test_rmse:,.3f}"
 )
 
 plt.xlabel("Actual Price ($)")
