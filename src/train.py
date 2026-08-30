@@ -10,6 +10,9 @@ X_train, X_test, y_train, y_test = split_data(X, y)
 X_train, mean, sigma = normalize(X_train)
 X_test = (X_test - mean) / sigma
 
+y_train, mu, sig = normalize(y_train)
+y_test = (y_test - mu) / sig
+
 w = np.zeros((X_train.shape[1], 1))
 b = 0 
 
@@ -32,8 +35,8 @@ print("Model Performance")
 print("----------------------------")
 print(f"Train Cost : {train_cost:.2f}")
 print(f"Test Cost  : {test_cost:.2f}")
-print(f"Train RMSE : ${train_rmse:,.2f}")
-print(f"Test RMSE  : ${test_rmse:,.2f}")
+print(f"Train RMSE : {train_rmse:,.2f}")
+print(f"Test RMSE  : {test_rmse:,.2f}")
 print(f"Train R²   : {train_r2:.4f}")
 print(f"Test R²    : {test_r2:.4f}")
 

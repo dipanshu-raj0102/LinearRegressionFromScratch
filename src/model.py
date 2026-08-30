@@ -10,10 +10,7 @@ def compute_cost(X, y, w, b):
     y_hat = predict(X, w, b)
 
     cost = 0.0
-    for i in range(m):
-        error = y_hat[i, 0] - y[i, 0]
-        cost += error ** 2
-
+    cost = np.sum((y_hat - y) ** 2 )
     return cost / (2 * m)
 
 def gradient_descent(X, y, w, b, alpha, iterations):
