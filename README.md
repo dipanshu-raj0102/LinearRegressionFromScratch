@@ -8,8 +8,8 @@ A complete implementation of **Multiple Linear Regression** using only **NumPy**
 
 | Metric | Score |
 |---------|------:|
-| **R² Score** | **0.609** |
-| **RMSE** | **$72,552** |
+| **R² Score** | **0.6281** |
+| **RMSE** | **0.61** |
 
 The model is trained on the **California Housing** dataset and evaluated using an 80/20 train-test split.
 
